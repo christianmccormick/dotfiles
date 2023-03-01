@@ -1,0 +1,33 @@
+tap "homebrew/cask"
+tap "buo/cask-upgrade"
+brew "mas"
+tap "homebrew/cask-fonts"
+
+brew "ctags"
+brew "exa"
+brew "neovim"
+brew "rbenv"
+brew "php"
+brew "rcm"
+brew "ripgrep"
+brew "tmux"
+brew "wget"
+
+cask "1password"
+cask "amethyst"
+cask "dropbox"
+cask "google-chrome"
+cask "kitty"
+cask "krisp"
+cask "postman"
+cask "raycast"
+cask "rocket"
+cask "spotify"
+cask "visual-studio-code"
+cask "zoom"
+
+mas "iA Writer", id: 775737590
+mas "Spark", id: 1176895641
+mas "Vinegar", id: 1591303229
+
+cask "font-jetbrains-mono-nerd-font"

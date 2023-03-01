@@ -1,0 +1,51 @@
+[user]
+	name = Christian McCormick
+	email = cmccormick421@gmail.com
+
+[alias]
+	s = status
+	l = log --oneline
+	ll = log
+	d = diff
+	sh = show
+	co = checkout
+	b = co -b
+	bm = !git co master && git pl && git co -b
+	a = add
+	ap = add --patch
+	aa = add .
+	c = commit -v
+	aac = !git aa && git c
+	cf = commit --fixup
+	cfnrasr = !git cf HEAD && git rasr
+	m = merge
+	r = rebase
+	ri = "!f() { git rebase -i $1~; }; f"
+	rb = "!f() { commitsBack=${1-1}; git rebase -i HEAD~$commitsBack;  }; f"
+	ras = rebase -i --autosquash
+	rasr = rebase -i --autosquash HEAD~2
+	rmr = rebase master
+	ra = rebase --abort
+	rc = rebase --continue
+	pl = pull
+	p = push
+	pub = push -u origin HEAD
+	fp = push --force-with-lease
+	cp = cherry-pick
+	rh1 = reset HEAD~1
+	rh = reset --hard
+	sr = !git fetch && git reset --hard origin/staging
+	aas = !git aa && git stash
+
+[core]
+	editor = nvim
+	commentChar = ";"
+
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+
+[rebase]
+	autosquash = true

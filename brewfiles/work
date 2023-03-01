@@ -1,0 +1,14 @@
+tap "homebrew/cask"
+tap "buo/cask-upgrade"
+
+brew "git-lfs"
+
+cask "asana"
+cask "dash"
+cask "docker"
+cask "google-drive"
+cask "keybase"
+cask "slack"
+cask "threads"
+cask "tuple"
+cask "viscosity"
