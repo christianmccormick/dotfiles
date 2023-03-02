@@ -1,6 +1,6 @@
 local telescope = require('telescope.builtin')
-local Terminal = require('toggleterm.terminal').Terminal
 local telescope_custom_pickers = require('christianmccormick.telescope_custom_pickers')
+local custom_terminals = require('christianmccormick.custom_terminals')
 
 vim.g.mapleader = ' '
 
@@ -45,9 +45,11 @@ vim.keymap.set('n', '<leader>T', ':TestNearest<CR>', {})
 vim.keymap.set('n', '<leader>t', ':TestFile<CR>', {})
 vim.keymap.set('n', '<leader>tl', ':TestLast<CR>', {})
 
--- terminal
+-- terminal/toggleterm
 vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-N>', {})
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', {})
+vim.keymap.set('n', '<leader>rc', custom_terminals.toggle_rails_console, {})
+vim.keymap.set('t', '<leader>rc', custom_terminals.toggle_rails_console, {})
 
 -- git
 vim.keymap.set('n', '<leader>gg', ':Git<CR>', {})
