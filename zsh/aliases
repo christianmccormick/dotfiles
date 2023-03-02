@@ -1,10 +1,14 @@
 # general aliases
 alias v="nvim"
 alias c="clear"
-alias l="exa --long --header --git"
-alias la="l -a"
 alias rm="rm -i"
 alias g="git"
+
+# file listing
+alias l="exa --long --header --git"
+alias la="l -a"
+alias lt="l -T"
+alias lta="l -Ta"
 
 # edit and source config files
 alias zc="v ~/.zshrc && source ~/.zshrc"
