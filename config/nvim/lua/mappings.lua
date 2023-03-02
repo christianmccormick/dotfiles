@@ -39,6 +39,7 @@ vim.keymap.set('n', '<leader>dd', ':lua vim.diagnostic.open_float()<CR>')
 
 -- editing
 vim.keymap.set('n', '<leader>y', '"+y', {})
+vim.keymap.set('v', '<leader>y', '"+y', {})
 
 -- testing
 vim.keymap.set('n', '<leader>T', ':TestNearest<CR>', {})
