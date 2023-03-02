@@ -39,6 +39,9 @@ return require('packer').startup(function(use)
   use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
 
+  -- ctags
+  use 'ludovicchabant/vim-gutentags'
+
   -- formatting
   use 'gpanders/editorconfig.nvim'
   use 'jose-elias-alvarez/null-ls.nvim'

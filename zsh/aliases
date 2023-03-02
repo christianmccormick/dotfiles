@@ -19,7 +19,7 @@ alias vc="cd ~/.dotfiles/config/nvim && v init.lua"
 alias gc="v ~/.gitconfig"
 
 # rcup
-alias syncdotfiles="rcup -x README.md -x Brewfile -x install.sh -x brewfiles -v"
+alias syncdotfiles="rcup -x README.md -x Brewfile -x install.sh -x brewfiles -x tags -v"
 
 # cds
 alias cb="cd .."
