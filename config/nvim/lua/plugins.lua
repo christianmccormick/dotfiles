@@ -89,6 +89,16 @@ return require('packer').startup(function(use)
   -- terminal
   use 'akinsho/toggleterm.nvim'
 
+  -- sessions
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require('auto-session').setup {
+        log_level = 'error',
+      }
+    end
+  }
+
   -- Automatically sets up this configuration after cloning packer.nvim
   if packer_bootstrap then
     require('packer').sync()
