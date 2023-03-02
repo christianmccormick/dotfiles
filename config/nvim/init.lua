@@ -13,6 +13,7 @@ require('plugins/nvim-treesitter')
 require('plugins/nvim-ufo')
 require('plugins/telescope')
 require('plugins/toggleterm')
+require('plugins/vim-test')
 
 require('autocmds')
 require('colorscheme')
