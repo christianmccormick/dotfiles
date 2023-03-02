@@ -1,6 +1,6 @@
 local telescope = require('telescope.builtin')
-local telescope_custom_pickers = require('christianmccormick.telescope_custom_pickers')
-local custom_terminals = require('christianmccormick.custom_terminals')
+local telescope_custom_pickers = require('cm.telescope_custom_pickers')
+local custom_terminals = require('cm.custom_terminals')
 
 vim.g.mapleader = ' '
 
