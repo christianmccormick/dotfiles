@@ -14,4 +14,15 @@ function custom_terminals.toggle_rails_console()
   rails_console:toggle()
 end
 
+-- bundle install
+
+local bundle_install = Terminal:new({
+  cmd = 'bundle install',
+  close_on_exit = false
+})
+
+function custom_terminals.run_bundle_install()
+  bundle_install:toggle()
+end
+
 return custom_terminals

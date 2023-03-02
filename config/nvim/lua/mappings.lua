@@ -50,6 +50,7 @@ vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-N>', {})
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', {})
 vim.keymap.set('n', '<leader>rc', custom_terminals.toggle_rails_console, {})
 vim.keymap.set('t', '<leader>rc', custom_terminals.toggle_rails_console, {})
+vim.keymap.set('n', '<leader>bi', custom_terminals.run_bundle_install, {})
 
 -- git
 vim.keymap.set('n', '<leader>gg', ':Git<CR>', {})
