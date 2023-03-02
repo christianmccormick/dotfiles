@@ -1,6 +1,6 @@
 local telescope = require('telescope.builtin')
-local telescope_custom_pickers = require('cm.telescope_custom_pickers')
-local custom_terminals = require('cm.custom_terminals')
+local telescope_custom_pickers = require('cm.plugins.telescope.custom_pickers')
+local toggleterm_custom_terminals = require('cm.plugins.toggleterm.custom_terminals')
 
 vim.g.mapleader = ' '
 
@@ -49,9 +49,9 @@ vim.keymap.set('n', '<leader>tl', ':TestLast<CR>', {})
 -- terminal/toggleterm
 vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-N>', {})
 vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', {})
-vim.keymap.set('n', '<leader>rc', custom_terminals.toggle_rails_console, {})
-vim.keymap.set('t', '<leader>rc', custom_terminals.toggle_rails_console, {})
-vim.keymap.set('n', '<leader>bi', custom_terminals.run_bundle_install, {})
+vim.keymap.set('n', '<leader>rc', toggleterm_custom_terminals.toggle_rails_console, {})
+vim.keymap.set('t', '<leader>rc', toggleterm_custom_terminals.toggle_rails_console, {})
+vim.keymap.set('n', '<leader>bi', toggleterm_custom_terminals.run_bundle_install, {})
 
 -- git
 vim.keymap.set('n', '<leader>gg', ':Git<CR>', {})

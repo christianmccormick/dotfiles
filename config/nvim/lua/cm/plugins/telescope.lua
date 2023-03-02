@@ -1,4 +1,4 @@
-custom_pickers = require('cm.telescope_custom_pickers')
+custom_pickers = require('cm.plugins.telescope.custom_pickers')
 
 require('telescope').setup {
   defaults = {
