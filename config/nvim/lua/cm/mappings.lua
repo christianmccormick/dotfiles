@@ -55,8 +55,6 @@ vim.keymap.set('n', '<leader>bi', toggleterm_custom_terminals.run_bundle_install
 
 -- git
 vim.keymap.set('n', '<leader>gg', ':Git<CR>', {})
-vim.keymap.set('n', '<leader>gt',
-  ':Gitsigns toggle_numhl<CR><BAR>:Gitsigns toggle_linehl<CR><BAR>:Gitsigns toggle_word_diff<CR>')
 
 -- ufo
 vim.keymap.set('n', 'zR', require('ufo').openAllFolds)
