@@ -7,6 +7,10 @@ local custom_terminals = {}
 local rails_console = Terminal:new({
   cmd = 'bin/rails console',
   close_on_exit = false,
+  direction = 'float',
+  float_opts = {
+    border = 'curved'
+  },
   hidden = true
 })
 
@@ -18,7 +22,11 @@ end
 
 local bundle_install = Terminal:new({
   cmd = 'bundle install',
-  close_on_exit = false
+  close_on_exit = false,
+  direction = 'float',
+  float_opts = {
+    border = 'curved'
+  }
 })
 
 function custom_terminals.run_bundle_install()
