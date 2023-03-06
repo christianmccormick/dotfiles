@@ -27,7 +27,8 @@ vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
 
 -- diagnostics
 vim.diagnostic.config {
-  virtual_text = false
+  virtual_text = false,
+  signs = false
 }
 
 -- fold column
