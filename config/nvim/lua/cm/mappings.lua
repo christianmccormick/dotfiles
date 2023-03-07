@@ -9,7 +9,10 @@ vim.keymap.set('n', '<leader>vc', ':tabedit $MYVIMRC<CR>', {})
 vim.keymap.set('n', '<leader>vv', ':luafile $MYVIMRC<CR>', {})
 
 -- navigation
-vim.keymap.set('n', '<leader>q', ':q!<CR>', {})
+vim.keymap.set('n', '<leader>qq', ':q!<CR>', {})
+vim.keymap.set('n', '<leader>qa', ':qa!<CR>', {})
+vim.keymap.set('n', '<leader>ww', ':w<CR>', {})
+vim.keymap.set('n', '<leader>wq', ':wq<CR>', {})
 vim.keymap.set('n', '<leader>h', '<C-W>h', {})
 vim.keymap.set('n', '<leader>j', '<C-W>j', {})
 vim.keymap.set('n', '<leader>k', '<C-W>k', {})
