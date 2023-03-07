@@ -3,6 +3,7 @@ alias v="nvim"
 alias c="clear"
 alias rm="rm -i"
 alias g="git"
+alias cat="bat"
 
 # file listing
 alias l="exa --long --header --git"

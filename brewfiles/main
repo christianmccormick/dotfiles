@@ -3,6 +3,7 @@ tap "buo/cask-upgrade"
 brew "mas"
 tap "homebrew/cask-fonts"
 
+brew "bat"
 brew "ctags"
 brew "exa"
 brew "neovim"
