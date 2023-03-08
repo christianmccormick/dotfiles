@@ -2,7 +2,13 @@ custom_pickers = require('cm.plugins.telescope.custom_pickers')
 
 require('telescope').setup {
   defaults = {
-    file_ignore_patterns = { '.git/' }
+    file_ignore_patterns = {
+      '.git/',
+      'tags',
+      'tags.lock',
+      'tags.temp',
+      'tags.temp.tmp'
+    }
   },
   pickers = {
     find_files = {
