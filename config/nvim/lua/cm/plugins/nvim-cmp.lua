@@ -11,6 +11,7 @@ cmp.setup {
       -- set a name for each source
       vim_item.menu = ({
         buffer = '[buffer]',
+        emoji = '[emoji]',
         nvim_lsp = '[lsp]',
         snippy = '[snippet]',
         nvim_lua = '[lua]',
@@ -36,6 +37,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'nvim_lua' },
     { name = 'buffer' },
+    { name = 'emoji' },
     { name = 'nvim_lsp_signature_help' },
     { name = 'rails_fixture_names' },
     { name = 'rails_fixture_types' }
@@ -46,6 +48,7 @@ cmp.setup {
 cmp.setup.filetype('gitcommit', {
   sources = cmp.config.sources({
     { name = 'buffer' },
+    { name = 'emoji' },
     { name = 'spell' },
   })
 })
