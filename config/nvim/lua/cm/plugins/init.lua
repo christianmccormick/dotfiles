@@ -1,6 +1,7 @@
 require('cm.plugins.Comment')
 require('cm.plugins.gitsigns')
 require('cm.plugins.indent-blankline')
+require('cm.plugins.fidget')
 require('cm.plugins.lualine')
 require('cm.plugins.mason')
 require('cm.plugins.null-ls')

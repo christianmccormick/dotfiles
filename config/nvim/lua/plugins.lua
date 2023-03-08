@@ -38,6 +38,7 @@ return require('packer').startup(function(use)
   use 'williamboman/mason.nvim'
   use 'williamboman/mason-lspconfig.nvim'
   use 'neovim/nvim-lspconfig'
+  use 'j-hui/fidget.nvim'
 
   -- ctags
   use 'ludovicchabant/vim-gutentags'
