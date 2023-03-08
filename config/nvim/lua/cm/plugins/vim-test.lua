@@ -1,3 +1,5 @@
+vim.g['test#ruby#rspec#executable'] = 'bundle exec rspec'
+
 vim.g['test#custom_strategies'] = {
   clean_toggleterm = function(cmd)
     local Terminal = require('toggleterm.terminal').Terminal
