@@ -37,6 +37,8 @@ vim.keymap.set('n', '<leader>tr', ':NvimTreeToggle<CR>', {})
 vim.keymap.set('n', '<leader>tn', ':LualineRenameTab ', {})
 vim.keymap.set('n', '<leader>xx', ':copen<CR>', {})
 
+vim.keymap.set('n', '<leader>a', ':A<CR>', {})
+
 -- diagnostics
 vim.keymap.set('n', '<leader>dd', ':lua vim.diagnostic.open_float()<CR>')
 
