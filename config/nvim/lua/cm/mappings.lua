@@ -51,7 +51,8 @@ vim.keymap.set('n', '<leader>tl', ':TestLast<CR>', {})
 
 -- terminal/toggleterm
 vim.keymap.set('t', '<leader><Esc>', '<C-\\><C-N>', {})
-vim.keymap.set('n', '<leader>tt', ':ToggleTerm<CR>', {})
+vim.keymap.set('n', '<leader>tt', toggleterm_custom_terminals.toggle_floating_terminal, {})
+vim.keymap.set('t', '<leader>tt', toggleterm_custom_terminals.toggle_floating_terminal, {})
 vim.keymap.set('n', '<leader>rc', toggleterm_custom_terminals.toggle_rails_console, {})
 vim.keymap.set('t', '<leader>rc', toggleterm_custom_terminals.toggle_rails_console, {})
 vim.keymap.set('n', '<leader>bi', toggleterm_custom_terminals.run_bundle_install, {})
