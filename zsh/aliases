@@ -16,7 +16,6 @@ alias zc="v ~/.zshrc && source ~/.zshrc"
 alias pzc="v ~/.private/zshrc && source ~/.zshrc"
 alias za="v ~/.zsh/aliases && source ~/.zsh/aliases"
 alias zf="v ~/.zsh/functions && source ~/.zsh/functions"
-alias vc="cd ~/.dotfiles/config/nvim && v init.lua"
 alias gc="v ~/.gitconfig"
 
 # rcup
@@ -27,17 +26,9 @@ alias cb="cd .."
 alias h="cd ~ && c"
 alias dfd="cd ~/.dotfiles"
 alias drive="cd ~/Library/Mobile\ Documents"
-alias pcg="cd ~/Code/giving"
-alias pca="cd ~/Code/accounts"
-alias pcl="cd ~/Code/login"
-alias pcgc="cd ~/Code/giving && c"
-alias pcac="cd ~/Code/accounts && c"
-alias pcal="cd ~/Code/login && c"
 
 # utilties
 alias freshyarn="rm -r node_modules && yarn"
-alias fy="freshyarn"
-alias tailcm="tail -f log/development.log | grep -C3 CM"
 alias ding="afplay /System/Library/Sounds/Funk.aiff"
 
 # postgresql
@@ -49,4 +40,3 @@ alias be="bundle exec"
 
 # rails
 alias rc="rails console"
-
