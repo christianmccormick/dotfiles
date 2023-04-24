@@ -28,6 +28,7 @@ cask "visual-studio-code"
 cask "zoom"
 
 mas "iA Writer", id: 775737590
+mas "Fantastical - Calendar", id: 975937182
 mas "Spark", id: 1176895641
 mas "Vinegar", id: 1591303229
 
