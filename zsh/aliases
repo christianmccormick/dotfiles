@@ -27,6 +27,11 @@ alias h="cd ~ && c"
 alias dfd="cd ~/.dotfiles"
 alias drive="cd ~/Library/Mobile\ Documents"
 
+# homebrew
+alias bbmain="brew bundle --file ~/.dotfiles/brewfiles/main --no-upgrade"
+alias bbwork="brew bundle --file ~/.dotfiles/brewfiles/work --no-upgrade"
+alias bbpersonal="brew bundle --file ~/.dotfiles/brewfiles/personal --no-upgrade"
+
 # utilties
 alias freshyarn="rm -r node_modules && yarn"
 alias ding="afplay /System/Library/Sounds/Funk.aiff"
