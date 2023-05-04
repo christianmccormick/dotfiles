@@ -37,3 +37,5 @@ fpath+=$HOME/Code/pure
 autoload -U promptinit; promptinit
 prompt pure
 
+# configure ripgrep config file
+export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
