@@ -23,7 +23,7 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, opts)
   vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, opts)
   vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, opts)
-  vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, opts)
+  vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, opts)
 
   -- if client.name == 'tsserver' or client.name == 'eslint' then
   --   client.server_capabilities.document_formatting = false
