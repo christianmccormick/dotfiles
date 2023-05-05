@@ -26,13 +26,4 @@ require('telescope').setup {
       },
     },
   },
-  extensions = {
-    project = {
-      base_dirs = {
-        '~/Code'
-      }
-    }
-  }
 }
-
-require('telescope').load_extension('project')
