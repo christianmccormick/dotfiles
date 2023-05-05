@@ -4,7 +4,7 @@ local group = vim.api.nvim_create_augroup('CM', { clear = true })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = '*.lua',
-  command = 'lua vim.lsp.buf.formatting_seq_sync(nil, 100)',
+  command = 'lua vim.lsp.buf.format(nil, 100)',
   group = group,
 })
 
@@ -17,7 +17,7 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.rb', '*.rake' },
   callback = function()
-    vim.lsp.buf.formatting_seq_sync()
+    vim.lsp.buf.format()
   end,
   group = group,
 })
