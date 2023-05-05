@@ -25,12 +25,6 @@ vim.keymap.set('n', '<leader>L', '<C-W>L', {})
 vim.keymap.set('n', '<leader>ff', telescope.find_files, {})
 vim.keymap.set('n', '<leader>fl', telescope_custom_pickers.live_grep, {})
 vim.keymap.set('n', '<leader>fw', telescope.grep_string, {})
-vim.api.nvim_set_keymap(
-  'n',
-  '<C-p>',
-  ":lua require'telescope'.extensions.project.project{}<CR>",
-  {}
-)
 vim.keymap.set('n', '<leader>fr', telescope.resume, {})
 
 vim.keymap.set('n', '<leader>tr', ':NvimTreeToggle<CR>', {})

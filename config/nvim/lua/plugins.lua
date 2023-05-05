@@ -18,10 +18,6 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
   use {
-    'nvim-telescope/telescope-project.nvim',
-    requires = { 'nvim-telescope/telescope.nvim' }
-  }
-  use {
     'kyazdani42/nvim-tree.lua',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
