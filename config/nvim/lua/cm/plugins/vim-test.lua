@@ -7,7 +7,16 @@ vim.g['test#custom_strategies'] = {
     Terminal:new({
       cmd = cmd,
       close_on_exit = false,
-      direction = 'float'
+      direction = 'float',
+      highlights = {
+        NormalFloat = {
+          guibg = '#1a1b26'
+        },
+        FloatBorder = {
+          guifg = '#3b4261',
+          guibg = '#1a1b26'
+        }
+      },
     }):toggle()
   end,
 }
