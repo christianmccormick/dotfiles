@@ -7,7 +7,10 @@ require('telescope').setup {
       'tags',
       'tags.lock',
       'tags.temp',
-      'tags.temp.tmp'
+      'tags.temp.tmp',
+      'vendor/',
+      'tmp/',
+      'log/'
     }
   },
   pickers = {
