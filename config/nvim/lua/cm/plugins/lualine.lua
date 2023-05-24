@@ -1,26 +1,52 @@
 local colors = require('tokyonight.colors').setup({ transform = true })
 
+local custom_tokyonight = require 'lualine.themes.tokyonight'
+
+custom_tokyonight.normal.b.bg = ''
+custom_tokyonight.insert.b.bg = ''
+custom_tokyonight.visual.b.bg = ''
+custom_tokyonight.replace.b.bg = ''
+custom_tokyonight.command.b.bg = ''
+custom_tokyonight.inactive.b.bg = ''
+
+custom_tokyonight.normal.c.bg = ''
+custom_tokyonight.inactive.c.bg = ''
+
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
-    tab_seperators = ''
+    theme = custom_tokyonight,
+    -- section_separators = { left = '\\uE0B4', right = '◖' },
+    -- component_separators = { left = '◖', right = '◗' },
+    -- section_separators = { left = '◗', right = '◖' }
   },
   sections = {
     lualine_a = { { 'mode', fmt = function(str) return str:sub(1, 1) end } },
-    lualine_c = {}
+    lualine_b = { 'branch' },
+    lualine_c = {},
+    lualine_x = { 'filetype' }
   },
   inactive_sections = {
     lualine_c = {}
   },
   tabline = {
-    lualine_a = { { 'tabs', mode = 2, max_length = vim.o.columns } }
+    lualine_a = {
+      {
+        'tabs',
+        mode = 2,
+        max_length = vim.o.columns,
+        tabs_color = { inactive = 'lualine_b_normal' },
+        -- fmt = function(name, context)
+        --   return '◖' .. name .. '◗'
+        -- end
+      }
+    }
   },
   winbar = {
     lualine_a = {
       {
         'filename',
         path = 1,
-        color = { bg = colors.fg_gutter, fg = colors.blue }
+        color = { bg = '', fg = colors.comment }
       }
     },
     lualine_b = {},
@@ -34,7 +60,7 @@ require('lualine').setup {
       {
         'filename',
         path = 1,
-        color = { bg = '', fg = colors.fg_gutter }
+        color = { bg = '', fg = colors.comment }
       }
     },
     lualine_b = {},

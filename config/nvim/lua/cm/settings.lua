@@ -7,7 +7,7 @@ vim.o.signcolumn = 'yes:1'
 -- line numbers
 vim.wo.relativenumber = true
 vim.wo.number = true
-vim.wo.cursorline = true
+-- vim.wo.cursorline = true
 
 -- indentation guides
 vim.opt.list = true
@@ -23,7 +23,7 @@ for type, icon in pairs(signs) do
 end
 
 -- make diffs look better
-vim.opt.fillchars = vim.opt.fillchars + 'diff:╱'
+vim.opt.fillchars = { eob = ' ', diff = '╱' }
 
 -- diagnostics
 vim.diagnostic.config {

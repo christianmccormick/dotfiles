@@ -4,6 +4,11 @@ local util = require('tokyonight.util')
 
 require('tokyonight').setup({
   style = 'night',
+  transparent = true,
+  styles = {
+    sidebars = 'transparent',
+    floats = 'transparent',
+  },
   on_colors = function(colors)
     vim.api.nvim_set_hl(0, 'DiffDelete', { fg = util.darken(colors.red1, 0.5), bg = colors.diff.delete })
   end
