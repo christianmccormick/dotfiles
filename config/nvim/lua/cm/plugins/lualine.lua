@@ -1,3 +1,5 @@
+local colorscheme_palette = require('nightfox.palette').load("nightfox")
+
 require('lualine').setup {
   options = {
     tab_seperators = ''
@@ -24,6 +26,10 @@ require('lualine').setup {
       {
         'filename',
         path = 1,
+        color = {
+          fg = colorscheme_palette.fg3,
+          bg = colorscheme_palette.bg0
+        }
       }
     },
     lualine_b = {},
