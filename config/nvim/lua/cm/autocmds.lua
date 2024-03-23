@@ -10,7 +10,11 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 
 vim.api.nvim_create_autocmd('BufWritePre', {
   pattern = { '*.tsx', '*.ts', '*.jsx', '*.js' },
-  command = 'EslintFixAll',
+  callback = function()
+    require('typescript-tools.api').fix_all(true)
+    vim.lsp.buf.format()
+    vim.cmd('silent! EslintFixAll')
+  end,
   group = group,
 })
 

@@ -57,11 +57,25 @@ require('lspconfig').syntax_tree.setup {
 
 -- javascript / typescript
 
-require('lspconfig').tsserver.setup { capabilities = capabilities, on_attach = on_attach }
+require("typescript-tools").setup { capabilities = capabilities, on_attach = on_attach }
 
 -- eslint
 
-require('lspconfig').eslint.setup { capabilities = capabilities, on_attach = on_attach }
+require('lspconfig').eslint.setup({
+  settings = {
+    validate = 'on',
+    codeAction = {
+      disableRuleComment = {
+        location = 'separateLine',
+      },
+      showDocumentation = {
+        enable = true,
+      },
+    },
+  },
+  capabilities = capabilities,
+  on_attach = on_attach,
+})
 
 -- lua
 

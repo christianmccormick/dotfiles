@@ -36,6 +36,8 @@ return require('packer').startup(function(use)
   use 'neovim/nvim-lspconfig'
   use 'j-hui/fidget.nvim'
 
+  use "pmizio/typescript-tools.nvim"
+
   -- ctags
   use 'ludovicchabant/vim-gutentags'
 
