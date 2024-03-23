@@ -26,6 +26,7 @@ alias cb="cd .."
 alias h="cd ~ && c"
 alias dfd="cd ~/.dotfiles"
 alias drive="cd ~/Library/Mobile\ Documents"
+alias qmkd="cd ~/Code/qmk_firmware"
 
 # homebrew
 alias bbmain="brew bundle --file ~/.dotfiles/brewfiles/main --no-upgrade"
