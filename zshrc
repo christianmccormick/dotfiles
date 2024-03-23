@@ -39,3 +39,6 @@ prompt pure
 
 # configure ripgrep config file
 export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
+
+# configure autojump
+[ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
