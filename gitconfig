@@ -14,7 +14,7 @@
 	a = add
 	ap = add --patch
 	aa = add .
-	c = commit -v
+	c = commit
 	aac = !git aa && git c
 	cf = commit --fixup
 	cfnrasr = !git cf HEAD && git rasr
@@ -53,3 +53,6 @@
 
 [init]
   defaultBranch = main
+
+[commit]
+  verbose = true
