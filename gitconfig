@@ -36,6 +36,7 @@
 	rh = reset --hard
 	sr = !git fetch && git reset --hard origin/staging
 	aas = !git aa && git stash
+  snapshot = !git stash save "snapshot" && git stash apply
 
 [core]
 	editor = nvim
