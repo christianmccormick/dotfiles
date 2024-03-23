@@ -1,8 +1,5 @@
-local colors = require('tokyonight.colors').setup({ transform = true })
-
 require('lualine').setup {
   options = {
-    theme = 'tokyonight',
     tab_seperators = ''
   },
   sections = {
@@ -28,7 +25,6 @@ require('lualine').setup {
       {
         'filename',
         path = 1,
-        color = { bg = colors.fg_gutter, fg = colors.blue }
       }
     },
     lualine_b = {},
@@ -42,7 +38,6 @@ require('lualine').setup {
       {
         'filename',
         path = 1,
-        color = { bg = '', fg = colors.fg_gutter }
       }
     },
     lualine_b = {},
