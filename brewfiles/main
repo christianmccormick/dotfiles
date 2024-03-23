@@ -32,8 +32,6 @@ cask "visual-studio-code"
 cask "warp"
 cask "zoom"
 
-mas "iA Writer", id: 775737590
 mas "Fantastical - Calendar", id: 975937182
-mas "Vinegar", id: 1591303229
 
 cask "font-jetbrains-mono-nerd-font"
