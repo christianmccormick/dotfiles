@@ -33,5 +33,6 @@ cask "warp"
 cask "zoom"
 
 mas "Fantastical - Calendar", id: 975937182
+mas "Hand Mirror", id: 1502839586
 
 cask "font-jetbrains-mono-nerd-font"
