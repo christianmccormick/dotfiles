@@ -36,6 +36,8 @@ vim.keymap.set('n', '<leader>a', ':A<CR>', {})
 
 -- diagnostics
 vim.keymap.set('n', '<leader>dd', ':lua vim.diagnostic.open_float()<CR>')
+vim.keymap.set('n', '<leader>dn', ':lua vim.diagnostic.goto_next()<CR>')
+vim.keymap.set('n', '<leader>dN', ':lua vim.diagnostic.goto_prev()<CR>')
 
 -- editing
 vim.keymap.set('n', '<leader>y', '"+y', {})
