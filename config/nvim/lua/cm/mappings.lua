@@ -28,6 +28,7 @@ vim.keymap.set('n', '<leader>fw', telescope.grep_string, {})
 vim.keymap.set('n', '<leader>fr', telescope.resume, {})
 
 vim.keymap.set('n', '<leader>tr', ':NvimTreeToggle<CR>', {})
+vim.keymap.set('n', '<leader>tf', ':NvimTreeFindFile<CR>', {})
 vim.keymap.set('n', '<leader>tn', ':LualineRenameTab ', {})
 vim.keymap.set('n', '<leader>xx', ':copen<CR>', {})
 
