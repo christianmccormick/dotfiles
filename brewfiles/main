@@ -15,7 +15,6 @@ brew "wget"
 
 cask "1password"
 cask "amethyst"
-cask "google-chrome"
 cask "kitty"
 cask "krisp"
 cask "obsidian"
@@ -24,10 +23,8 @@ cask "raycast"
 cask "readdle-spark"
 cask "rocket"
 cask "spacelauncher"
-cask "spotify"
 cask "vanilla"
 cask "visual-studio-code"
-cask "warp"
 cask "zoom"
 
 mas "Fantastical - Calendar", id: 975937182
