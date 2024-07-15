@@ -1,6 +1,5 @@
 tap "buo/cask-upgrade"
 brew "mas"
-tap "homebrew/cask-fonts"
 
 brew "autojump"
 brew "bat"
