@@ -6,7 +6,7 @@ alias g="git"
 alias cat="bat"
 
 # file listing
-alias l="exa --long --header --git"
+alias l="eza --long --header --git"
 alias la="l -a"
 alias lt="l -T"
 alias lta="l -Ta"
