@@ -11,6 +11,7 @@ return require('packer').startup(function(use)
   -- appearance
   use 'EdenEast/nightfox.nvim'
   use 'lukas-reineke/indent-blankline.nvim'
+  use 'nanozuki/tabby.nvim'
 
   -- navigation
   use {
