@@ -42,3 +42,6 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # configure autojump
 [ -f /opt/homebrew/etc/profile.d/autojump.sh ] && . /opt/homebrew/etc/profile.d/autojump.sh
+
+# set tab titles to current directory
+precmd() { echo -ne '\e]1;$PWD\a' }
