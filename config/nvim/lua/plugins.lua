@@ -66,6 +66,7 @@ return require('packer').startup(function(use)
   use 'kylechui/nvim-surround'
   use 'RRethy/nvim-treesitter-endwise'
   use 'windwp/nvim-autopairs'
+  use { 'rrethy/vim-hexokinase', run = "make hexokinase" }
 
   -- ruby
   use {
