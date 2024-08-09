@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
 
   -- appearance
   use 'EdenEast/nightfox.nvim'
+  use 'kyazdani42/nvim-web-devicons'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nanozuki/tabby.nvim'
 
@@ -19,17 +20,12 @@ return require('packer').startup(function(use)
     requires = { 'nvim-lua/plenary.nvim' }
   }
   use {
-    'kyazdani42/nvim-tree.lua',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use 'kyazdani42/nvim-tree.lua'
   use 'kevinhwang91/nvim-bqf'
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
 
   -- diagnostics
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-lualine/lualine.nvim'
 
   -- lsp
   use 'williamboman/mason.nvim'
