@@ -74,6 +74,11 @@ install_work_bundle() {
   brew bundle --file $HOME/.dotfiles/brewfiles/work
 }
 
+install_npm_packages() {
+  echo 'Installing npm packages...'
+  npm install
+}
+
 set_up_homebrew
 install_main_bundle
 set_up_rcm
@@ -82,6 +87,7 @@ set_up_zsh
 install_vim_plug
 set_up_dev_environment
 install_zsh_theme
+install_npm_packages
 
 if [ "$env" == "personal" ]; then
   install_personal_bundle
