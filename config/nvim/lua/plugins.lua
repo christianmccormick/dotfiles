@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
     'nvim-telescope/telescope.nvim',
     requires = { 'nvim-lua/plenary.nvim' }
   }
-  use {
   use 'kyazdani42/nvim-tree.lua'
   use 'kevinhwang91/nvim-bqf'
   use { 'kevinhwang91/nvim-ufo', requires = 'kevinhwang91/promise-async' }
