@@ -9,6 +9,8 @@ cask "google-drive"
 cask "keybase"
 cask "notion"
 cask "slack"
-cask "threads"
+cask "tableplus"
 cask "tuple"
 cask "viscosity"
+
+mas "Redis Insight", id: 2142946629
