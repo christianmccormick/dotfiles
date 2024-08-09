@@ -10,6 +10,7 @@ return require('packer').startup(function(use)
 
   -- appearance
   use 'EdenEast/nightfox.nvim'
+  use 'freddiehaddad/feline.nvim'
   use 'kyazdani42/nvim-web-devicons'
   use 'lukas-reineke/indent-blankline.nvim'
   use 'nanozuki/tabby.nvim'

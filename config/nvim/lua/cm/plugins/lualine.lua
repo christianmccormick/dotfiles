@@ -18,39 +18,6 @@ require('lualine').setup {
   inactive_sections = {
     lualine_c = {}
   },
-  tabline = {
-    lualine_a = { { 'tabs', mode = 2, max_length = vim.o.columns } }
-  },
-  winbar = {
-    lualine_a = {
-      {
-        'filename',
-        path = 1,
-        color = {
-          fg = colorscheme_palette.fg3,
-          bg = colorscheme_palette.bg0
-        }
-      }
-    },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
-  },
-  inactive_winbar = {
-    lualine_a = {
-      {
-        'filename',
-        path = 1,
-      }
-    },
-    lualine_b = {},
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = {},
-    lualine_z = {}
-  },
   extensions = {
     'fugitive',
     'nvim-tree',
