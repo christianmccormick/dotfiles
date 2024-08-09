@@ -86,6 +86,7 @@ return require('packer').startup(function(use)
   use 'vim-test/vim-test'
 
   -- git
+  use 'sindrets/diffview.nvim'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
