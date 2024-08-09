@@ -88,6 +88,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'tpope/vim-rhubarb'
   use 'lewis6991/gitsigns.nvim'
+  use 'wassimk/gh-navigator.nvim'
 
   -- terminal
   use 'akinsho/toggleterm.nvim'
