@@ -70,19 +70,6 @@ require("lspconfig").eslint.setup({
 
 -- lua
 
-local runtime_path = vim.split(package.path, ";")
-table.insert(runtime_path, "lua/?.lua")
-table.insert(runtime_path, "lua/?/init.lua")
-
 require("lspconfig").lua_ls.setup({
-  settings = {
-    Lua = {
-      runtime = { path = runtime_path },
-      diagnostics = { globals = { "vim", "hs" } },
-      workspace = { library = vim.api.nvim_get_runtime_file("", true) },
-      format = { enable = true },
-      telemetry = { enable = false },
-    },
-  },
   on_attach = on_attach,
 })

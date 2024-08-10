@@ -6,5 +6,6 @@ require("null-ls").setup({
       command = "bundle",
       args = vim.list_extend({ "exec", "rubocop" }, null_ls.builtins.diagnostics.rubocop._opts.args),
     }),
+    null_ls.builtins.formatting.stylua,
   },
 })
