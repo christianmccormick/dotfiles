@@ -10,6 +10,7 @@ brew "rbenv"
 brew "php"
 brew "rcm"
 brew "ripgrep"
+brew "stylua"
 brew "tmux"
 brew "wget"
 

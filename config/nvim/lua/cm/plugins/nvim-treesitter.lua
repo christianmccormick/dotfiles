@@ -1,4 +1,4 @@
-require('nvim-treesitter.configs').setup {
+require("nvim-treesitter.configs").setup({
   ensure_installed = {
     "bash",
     "c",
@@ -12,7 +12,7 @@ require('nvim-treesitter.configs').setup {
     "ruby",
     "scss",
     "typescript",
-    "yaml"
+    "yaml",
   },
   sync_install = false,
   auto_install = true,
@@ -29,6 +29,6 @@ require('nvim-treesitter.configs').setup {
     enable = true,
   },
   indent = {
-    enable = true
-  }
-}
+    enable = true,
+  },
+})

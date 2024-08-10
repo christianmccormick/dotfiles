@@ -1,6 +1,6 @@
-require('toggleterm').setup({
-  direction = 'float',
+require("toggleterm").setup({
+  direction = "float",
   float_opts = {
-    border = 'curved'
-  }
+    border = "curved",
+  },
 })

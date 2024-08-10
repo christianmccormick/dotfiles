@@ -1,1 +1,1 @@
-require('gh-navigator').setup({})
+require("gh-navigator").setup({})

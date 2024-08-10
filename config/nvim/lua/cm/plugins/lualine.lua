@@ -1,26 +1,31 @@
-local colorscheme_palette = require('nightfox.palette').load("nightfox")
+local colorscheme_palette = require("nightfox.palette").load("nightfox")
 
-require('lualine').setup {
+require("lualine").setup({
   options = {
-    tab_seperators = ''
+    tab_seperators = "",
   },
   sections = {
-    lualine_a = { { 'mode', fmt = function(str) return str:sub(1, 1) end } },
-    lualine_b = { 'branch' },
+    lualine_a = { {
+      "mode",
+      fmt = function(str)
+        return str:sub(1, 1)
+      end,
+    } },
+    lualine_b = { "branch" },
     lualine_c = {
-      'diff',
+      "diff",
       {
-        'diagnostics',
-        symbols = { error = ' ', warn = ' ', hint = ' ', info = ' ' },
-      }
+        "diagnostics",
+        symbols = { error = " ", warn = " ", hint = " ", info = " " },
+      },
     },
   },
   inactive_sections = {
-    lualine_c = {}
+    lualine_c = {},
   },
   extensions = {
-    'fugitive',
-    'nvim-tree',
-    'quickfix'
-  }
-}
+    "fugitive",
+    "nvim-tree",
+    "quickfix",
+  },
+})

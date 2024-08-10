@@ -1,17 +1,17 @@
 -- Taken from @wassimk's dotfiles:
 -- https://github.com/wassimk/dotfiles/commit/6e0d6d66dcd9e9cee604a274d44659842bd128e3
 
-local Path = require('plenary.path')
-local action_set = require('telescope.actions.set')
-local action_state = require('telescope.actions.state')
-local transform_mod = require('telescope.actions.mt').transform_mod
-local actions = require('telescope.actions')
-local conf = require('telescope.config').values
-local finders = require('telescope.finders')
-local make_entry = require('telescope.make_entry')
+local Path = require("plenary.path")
+local action_set = require("telescope.actions.set")
+local action_state = require("telescope.actions.state")
+local transform_mod = require("telescope.actions.mt").transform_mod
+local actions = require("telescope.actions")
+local conf = require("telescope.config").values
+local finders = require("telescope.finders")
+local make_entry = require("telescope.make_entry")
 local os_sep = Path.path.sep
-local pickers = require('telescope.pickers')
-local scan = require('plenary.scandir')
+local pickers = require("telescope.pickers")
+local scan = require("plenary.scandir")
 
 local M = {}
 
@@ -26,9 +26,9 @@ local live_grep_filters = {
 ---Run `live_grep` with the active filters (extension and folders)
 local function run_live_grep(current_input)
   -- TODO: Resume old one with same options somehow
-  require('telescope.builtin').live_grep({
+  require("telescope.builtin").live_grep({
     additional_args = live_grep_filters.extension and function()
-      return { '-g', '*.' .. live_grep_filters.extension }
+      return { "-g", "*." .. live_grep_filters.extension }
     end,
     search_dirs = live_grep_filters.directories,
     default_text = current_input,
@@ -41,14 +41,14 @@ M.actions = transform_mod({
     local current_picker = action_state.get_current_picker(prompt_bufnr)
     local current_input = action_state.get_current_line()
 
-    vim.ui.input({ prompt = '*.' }, function(input)
+    vim.ui.input({ prompt = "*." }, function(input)
       if input == nil then
         return
       end
 
       live_grep_filters.extension = input
 
-      actions._close(prompt_bufnr, current_picker.initial_mode == 'insert')
+      actions._close(prompt_bufnr, current_picker.initial_mode == "insert")
       run_live_grep(current_input)
     end)
   end,
@@ -66,37 +66,37 @@ M.actions = transform_mod({
         table.insert(data, entry .. os_sep)
       end,
     })
-    table.insert(data, 1, '.' .. os_sep)
+    table.insert(data, 1, "." .. os_sep)
 
-    actions._close(prompt_bufnr, current_picker.initial_mode == 'insert')
+    actions._close(prompt_bufnr, current_picker.initial_mode == "insert")
     pickers
-        .new({}, {
-          prompt_title = 'Folders for Live Grep',
-          finder = finders.new_table({ results = data, entry_maker = make_entry.gen_from_file({}) }),
-          previewer = conf.file_previewer({}),
-          sorter = conf.file_sorter({}),
-          attach_mappings = function(prompt_bufnr)
-            action_set.select:replace(function()
-              local folder_picker = action_state.get_current_picker(prompt_bufnr)
+      .new({}, {
+        prompt_title = "Folders for Live Grep",
+        finder = finders.new_table({ results = data, entry_maker = make_entry.gen_from_file({}) }),
+        previewer = conf.file_previewer({}),
+        sorter = conf.file_sorter({}),
+        attach_mappings = function(prompt_bufnr)
+          action_set.select:replace(function()
+            local folder_picker = action_state.get_current_picker(prompt_bufnr)
 
-              local dirs = {}
-              local selections = folder_picker:get_multi_selection()
-              if vim.tbl_isempty(selections) then
-                table.insert(dirs, action_state.get_selected_entry().value)
-              else
-                for _, selection in ipairs(selections) do
-                  table.insert(dirs, selection.value)
-                end
+            local dirs = {}
+            local selections = folder_picker:get_multi_selection()
+            if vim.tbl_isempty(selections) then
+              table.insert(dirs, action_state.get_selected_entry().value)
+            else
+              for _, selection in ipairs(selections) do
+                table.insert(dirs, selection.value)
               end
-              live_grep_filters.directories = dirs
+            end
+            live_grep_filters.directories = dirs
 
-              actions.close(prompt_bufnr)
-              run_live_grep(current_input)
-            end)
-            return true
-          end,
-        })
-        :find()
+            actions.close(prompt_bufnr)
+            run_live_grep(current_input)
+          end)
+          return true
+        end,
+      })
+      :find()
   end,
 })
 
@@ -105,7 +105,7 @@ M.live_grep = function()
   live_grep_filters.extension = nil
   live_grep_filters.directories = nil
 
-  require('telescope.builtin').live_grep()
+  require("telescope.builtin").live_grep()
 end
 
 return M
