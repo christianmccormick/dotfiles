@@ -1,10 +1,12 @@
 tap "buo/cask-upgrade"
+tap "jesseduffield/lazygit"
 brew "mas"
 
 brew "autojump"
 brew "bat"
 brew "ctags"
 brew "eza"
+brew "lazygit"
 brew "neovim"
 brew "rbenv"
 brew "php"
