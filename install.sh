@@ -2,13 +2,13 @@
 
 while getopts ":e:" opt; do
   case $opt in
-    e)
-      env=$OPTARG
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG. Set the intended install environment with -e <environment>, where environment is \"work\" or \"personal\"." >&2
-      exit 1
-      ;;
+  e)
+    env=$OPTARG
+    ;;
+  \?)
+    echo "Invalid option: -$OPTARG. Set the intended install environment with -e <environment>, where environment is \"work\" or \"personal\"." >&2
+    exit 1
+    ;;
   esac
 done
 
@@ -59,6 +59,15 @@ set_up_dev_environment() {
   git clone https://github.com/folke/tokyonight.nvim.git $HOME/Code/tokyonight.nvim
 }
 
+# Taken from https://github.com/wassimk/dotfiles/blob/596a4b8573408fe96177f5e19f2142e6ef35c81d/dotfiles.sh#L25-L30
+set_up_lazygit() {
+  real_lazygit_config_dir="$HOME/Library/Application Support/lazygit"
+  lazygit_config_file="$HOME/.config/lazygit/config.yml"
+  if [ -d "$real_lazygit_config_dir" ]; then
+    ln -sf "$lazygit_config_file" "$real_lazygit_config_dir/config.yml"
+  fi
+}
+
 install_zsh_theme() {
   echo 'Installing ZSH theme (pure)...'
   git clone https://github.com/sindresorhus/pure.git $HOME/Code/pure
@@ -86,6 +95,7 @@ set_up_private_dotfiles
 set_up_zsh
 install_vim_plug
 set_up_dev_environment
+set_up_lazygit
 install_zsh_theme
 install_npm_packages
 
