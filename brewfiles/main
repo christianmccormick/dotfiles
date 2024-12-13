@@ -1,6 +1,5 @@
 tap "buo/cask-upgrade"
 tap "jesseduffield/lazygit"
-brew "mas"
 
 brew "autojump"
 brew "bat"
@@ -15,22 +14,5 @@ brew "ripgrep"
 brew "stylua"
 brew "tmux"
 brew "wget"
-
-cask "1password"
-cask "amethyst"
-cask "kitty"
-cask "krisp"
-cask "obsidian"
-cask "postman"
-cask "raycast"
-cask "readdle-spark"
-cask "rocket"
-cask "spacelauncher"
-cask "vanilla"
-cask "visual-studio-code"
-cask "zoom"
-
-mas "Fantastical - Calendar", id: 975937182
-mas "Hand Mirror", id: 1502839586
 
 cask "font-jetbrains-mono-nerd-font"
