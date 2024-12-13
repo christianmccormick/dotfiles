@@ -45,20 +45,6 @@ set_up_zsh() {
   sudo chsh -s /usr/bin/zsh echo "$USER"
 }
 
-set_up_dev_environment() {
-  echo 'Setting up dev environment...'
-  rbenv install
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-  gem install bundler
-  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-  nvm install --lts
-  gem install gem-ctags
-  gem ctags
-  mkdir -p $HOME/Code
-  git clone https://github.com/folke/tokyonight.nvim.git $HOME/Code/tokyonight.nvim
-}
-
 # Taken from https://github.com/wassimk/dotfiles/blob/596a4b8573408fe96177f5e19f2142e6ef35c81d/dotfiles.sh#L25-L30
 set_up_lazygit() {
   real_lazygit_config_dir="$HOME/Library/Application Support/lazygit"
@@ -83,6 +69,17 @@ install_work_bundle() {
   brew bundle --file $HOME/.dotfiles/brewfiles/work
 }
 
+set_up_dev_environment() {
+  echo 'Setting up dev environment...'
+  echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >>${ZDOTDIR:-~}/.zshrc
+  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
+  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+  adsf install
+  gem install bundler
+  # gem install gem-ctags
+  # gem ctags
+}
+
 install_npm_packages() {
   echo 'Installing npm packages...'
   npm install
@@ -94,9 +91,9 @@ set_up_rcm
 set_up_private_dotfiles
 set_up_zsh
 install_vim_plug
-set_up_dev_environment
 set_up_lazygit
 install_zsh_theme
+set_up_dev_environment
 install_npm_packages
 
 if [ "$env" == "personal" ]; then

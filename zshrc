@@ -4,9 +4,6 @@ export ZSH_THEME=""
 plugins=()
 source $ZSH/oh-my-zsh.sh
 
-# load rbenv
-eval "$(rbenv init - zsh)"
-
 # load nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
@@ -45,3 +42,5 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 
 # set tab titles to current directory
 precmd() { echo -ne '\e]1;$PWD\a' }
+
+. /opt/homebrew/opt/asdf/libexec/asdf.sh
