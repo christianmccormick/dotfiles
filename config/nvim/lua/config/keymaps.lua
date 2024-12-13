@@ -4,6 +4,19 @@
 
 local wk = require("which-key")
 
+vim.keymap.set(
+  "n",
+  "<leader>fp",
+  ":echo 'Current Relative File Path: ' . expand('%')<cr>",
+  { desc = "Print Current Relative File Path" }
+)
+vim.keymap.set(
+  "n",
+  "<leader>fP",
+  ":echo 'Current Absolute File Path: ' . expand('%:p')<cr>",
+  { desc = "Print Current Absolute File Path" }
+)
+
 vim.api.nvim_set_keymap(
   "n",
   "<leader>gB",
