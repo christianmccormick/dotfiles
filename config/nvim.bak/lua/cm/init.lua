@@ -1,6 +1,0 @@
-require("cm.autocmds")
-require("cm.colorscheme")
-require("cm.commands")
-require("cm.mappings")
-require("cm.plugins")
-require("cm.settings")
