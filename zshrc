@@ -43,4 +43,7 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # set tab titles to current directory
 precmd() { echo -ne '\e]1;$PWD\a' }
 
+# set up direnv
+eval "$(direnv hook zsh)"
+
 . /opt/homebrew/opt/asdf/libexec/asdf.sh
