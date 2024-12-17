@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# exit immediately if a command exits with a non-zero status
+set -e
+
 while getopts ":e:" opt; do
   case $opt in
   e)
@@ -19,7 +22,25 @@ fi
 
 set_up_homebrew() {
   echo 'Installing homebrew...'
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  if which brew >/dev/null 2>&1; then
+    echo 'Homebrew already installed, skipping...'
+  else
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
+}
+
+set_up_rcm() {
+  echo 'Setting up RCM...'
+  if which rcup >/dev/null 2>&1; then
+    echo 'RCM already set up, skipping...'
+  else
+    mkdir -p $HOME/.dotfiles
+    cd $HOME/.dotfiles
+    brew install rcm # it's also in my brewfiles, but those aren't installed yet
+    rcdn
+    rcup -x README.md -x install.sh -x brewfiles -v
+  fi
 }
 
 install_main_bundle() {
@@ -27,26 +48,29 @@ install_main_bundle() {
   brew bundle --file $HOME/.dotfiles/brewfiles/main
 }
 
-set_up_rcm() {
-  echo 'Setting up RCM...'
-  cd $HOME/.dotfiles
-  rcdn
-  rcup -x README.md -x Brewfile -x install.sh -x brewfiles
-}
-
 set_up_private_dotfiles() {
-  mkdir -p $HOME/.private
-  touch $HOME/.private/zshrc
+  echo 'Setting up private dotfiles...'
+  if [ -e "$HOME/.private/zshrc" ]; then
+    echo 'Private dotfiles already exist, skipping...'
+  else
+    mkdir -p $HOME/.private
+    touch $HOME/.private/zshrc
+  fi
 }
 
 set_up_zsh() {
   echo 'Setting up ZSH...'
-  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  sudo chsh -s /usr/bin/zsh echo "$USER"
+  if which zsh >/dev/null 2>&1; then
+    echo 'ZSH already installed, skipping...'
+  else
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    sudo chsh -s /usr/bin/zsh echo "$USER"
+  fi
 }
 
 # Taken from https://github.com/wassimk/dotfiles/blob/596a4b8573408fe96177f5e19f2142e6ef35c81d/dotfiles.sh#L25-L30
 set_up_lazygit() {
+  echo "Setting up lazygit..."
   real_lazygit_config_dir="$HOME/Library/Application Support/lazygit"
   lazygit_config_file="$HOME/.config/lazygit/config.yml"
   if [ -d "$real_lazygit_config_dir" ]; then
@@ -56,45 +80,41 @@ set_up_lazygit() {
 
 install_zsh_theme() {
   echo 'Installing ZSH theme (pure)...'
-  git clone https://github.com/sindresorhus/pure.git $HOME/Code/pure
+  if [ -d "$HOME/Code/pure" ]; then
+    echo 'ZSH theme already installed, skipping...'
+  else
+    git clone https://github.com/sindresorhus/pure.git $HOME/Code/pure
+  fi
 }
 
 install_personal_bundle() {
   echo 'Installing personal bundle...'
-  brew bundle --file $HOME/.dotfiles/brewfiles/personal
+  /opt/homebrew/bin/brew bundle --file $HOME/.dotfiles/brewfiles/personal
 }
 
 install_work_bundle() {
   echo 'Installing work bundle...'
-  brew bundle --file $HOME/.dotfiles/brewfiles/work
+  /opt/homebrew/bin/brew bundle --file $HOME/.dotfiles/brewfiles/work
 }
 
 set_up_dev_environment() {
   echo 'Setting up dev environment...'
-  echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >>${ZDOTDIR:-~}/.zshrc
+  . $(brew --prefix asdf)/libexec/asdf.sh
   asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
   asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-  adsf install
+  asdf install
   gem install bundler
-  # gem install gem-ctags
-  # gem ctags
-}
-
-install_npm_packages() {
-  echo 'Installing npm packages...'
   npm install
 }
 
 set_up_homebrew
-install_main_bundle
 set_up_rcm
+install_main_bundle
 set_up_private_dotfiles
 set_up_zsh
-install_vim_plug
 set_up_lazygit
 install_zsh_theme
 set_up_dev_environment
-install_npm_packages
 
 if [ "$env" == "personal" ]; then
   install_personal_bundle
