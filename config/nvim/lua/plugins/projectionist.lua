@@ -13,7 +13,7 @@ return {
         },
         ["spec/*_spec.rb"] = {
           type = "test",
-          alternate = "spec/{}.rb",
+          alternate = "app/{}.rb",
         },
         ["app/*.js"] = {
           type = "source",
@@ -25,7 +25,7 @@ return {
         },
         ["spec/*_spec.js"] = {
           type = "test",
-          alternate = "spec/{}.js",
+          alternate = "app/{}.js",
         },
         ["app/*.ts"] = {
           type = "source",
@@ -37,7 +37,7 @@ return {
         },
         ["spec/*_spec.ts"] = {
           type = "test",
-          alternate = "spec/{}.ts",
+          alternate = "app/{}.ts",
         },
       },
     }
