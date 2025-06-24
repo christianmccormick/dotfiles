@@ -4,3 +4,4 @@ tags.lock
 tags.temp
 tags.temp.tmp
 node_modules
+.claude
