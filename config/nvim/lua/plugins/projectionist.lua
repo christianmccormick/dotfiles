@@ -53,9 +53,9 @@ return {
     local wk = require("which-key")
 
     wk.add({
-      { "<leader>a", group = "alternate" },
+      { "<leader>A", group = "alternate" },
     })
 
-    vim.keymap.set("n", "<leader>a", ":A<cr>", { desc = "Open alternate", silent = true })
+    vim.keymap.set("n", "<leader>A", ":A<cr>", { desc = "Open alternate", silent = true })
   end,
 }
