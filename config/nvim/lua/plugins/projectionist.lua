@@ -29,13 +29,21 @@ return {
         },
         ["app/*.ts"] = {
           type = "source",
-          alternate = { "test/{}_test.ts", "spec/{}_spec.ts" },
+          alternate = { "test/{}_test.ts", "spec/{}_spec.ts", "test/{}.test.ts", "spec/{}.test.ts" },
         },
         ["test/*_test.ts"] = {
           type = "test",
           alternate = "app/{}.ts",
         },
         ["spec/*_spec.ts"] = {
+          type = "test",
+          alternate = "app/{}.ts",
+        },
+        ["test/*.test.ts"] = {
+          type = "test",
+          alternate = "app/{}.ts",
+        },
+        ["spec/*.test.ts"] = {
           type = "test",
           alternate = "app/{}.ts",
         },
