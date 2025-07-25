@@ -22,9 +22,14 @@ return {
         end,
       },
       ruby_lsp = {
+        -- cmd = { "direnv", "exec", ".", "ruby", "-S", "ruby-lsp" },
         init_options = {
           formatter = "syntax_tree",
         },
+      },
+      rubocop = {},
+      syntax_tree = {
+        cmd = { "bundle", "exec", "stree", "lsp" },
       },
       eslint = {},
     },
