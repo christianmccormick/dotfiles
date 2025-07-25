@@ -46,8 +46,8 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # set tab titles to current directory
 precmd() { echo -ne '\e]1;$PWD\a' }
 
+# set up devbox global
+eval "$(devbox global shellenv)"
+
 # set up direnv
 eval "$(direnv hook zsh)"
-
-# load adsf
-source "$(brew --prefix asdf)/libexec/asdf.sh"

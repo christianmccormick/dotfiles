@@ -1,0 +1,6 @@
+{
+  "packages": [
+    "nodejs@latest",
+    "ruby@3.3"
+  ]
+}
