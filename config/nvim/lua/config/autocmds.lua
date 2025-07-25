@@ -11,3 +11,11 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format()
   end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  pattern = { "gitcommit" },
+  callback = function()
+    vim.opt.bufhidden = "delete"
+  end,
+})

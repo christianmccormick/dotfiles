@@ -40,7 +40,7 @@
   clean-branches = "!f() { git branch -vv | grep ': gone]' | grep -v '\\*' | awk '{ print $1; }' | xargs -r git branch -d; }; f"
 
 [core]
-	editor = nvim
+	editor = nvr --nostart --remote-tab-wait
 	commentChar = ";"
 	excludesFile = "~/.gitignore"
 
