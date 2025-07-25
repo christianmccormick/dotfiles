@@ -53,3 +53,7 @@ vim.api.nvim_set_keymap(
   "<cmd>:GH repo pulls<cr>",
   { desc = "GitHub PRs", noremap = true, silent = true }
 )
+
+vim.keymap.set("n", "<leader>b?", function()
+  require("which-key").show({ global = false })
+end, { desc = "Buffer Keymaps (which-key)" })
