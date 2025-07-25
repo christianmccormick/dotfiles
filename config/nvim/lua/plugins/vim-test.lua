@@ -4,6 +4,10 @@ return {
   {
     "vim-test/vim-test",
     config = function()
+      vim.g["test#project_root"] = function()
+        return LazyVim.root()
+      end
+
       vim.g["test#custom_strategies"] = {
         snacks = function(cmd)
           Snacks.terminal.open(cmd, {
@@ -12,6 +16,13 @@ return {
         end,
       }
       vim.g["test#strategy"] = "snacks"
+
+      vim.g["test#custom_transformations"] = {
+        devbox = function(cmd)
+          return 'devbox run "' .. cmd .. '"'
+        end,
+      }
+      vim.g["test#transformation"] = "devbox"
 
       local wk = require("which-key")
 
