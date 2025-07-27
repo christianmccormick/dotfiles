@@ -87,6 +87,10 @@ install_zsh_theme() {
   fi
 }
 
+setup_bat_theme() {
+  bat cache --build
+}
+
 install_personal_bundle() {
   echo 'Installing personal bundle...'
   /opt/homebrew/bin/brew bundle --file $HOME/.dotfiles/brewfiles/personal
@@ -110,6 +114,7 @@ set_up_private_dotfiles
 set_up_zsh
 set_up_lazygit
 install_zsh_theme
+setup_bat_theme
 set_up_dev_environment
 
 if [ "$env" == "personal" ]; then
