@@ -125,5 +125,7 @@ fi
 
 echo ''
 echo 'Install complete! 🎉'
+echo ''
+echo 'Run `source ~/.zshrc` for full access to your new development environment.'
 
 exit
