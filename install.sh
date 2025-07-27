@@ -98,13 +98,9 @@ install_work_bundle() {
 }
 
 set_up_dev_environment() {
-  echo 'Setting up dev environment...'
-  . $(brew --prefix asdf)/libexec/asdf.sh
-  asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git
-  asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-  asdf install
-  gem install bundler
-  npm install
+  echo 'Setting up dev environment..'
+  curl -fsSL https://get.jetify.com/devbox | bash
+  devbox global install
 }
 
 set_up_homebrew

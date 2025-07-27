@@ -20,7 +20,7 @@ alias gc="v ~/.gitconfig"
 
 # rcup
 alias removedotfiles="rcdn"
-alias syncdotfiles="rcup -x README.md -x Brewfile -x install.sh -x brewfiles -x tags -x config/nvim.bak -U devbox.json -v"
+alias syncdotfiles="rcup -x README.md -x Brewfile -x install.sh -x brewfiles -x tags -x config/nvim.bak -v"
 alias rdf=removedotfiles
 alias sdf=syncdotfiles
 

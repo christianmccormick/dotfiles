@@ -1,7 +1,6 @@
 tap "buo/cask-upgrade"
 tap "jesseduffield/lazygit"
 
-brew "asdf"
 brew "autojump"
 brew "bat"
 brew "direnv"
