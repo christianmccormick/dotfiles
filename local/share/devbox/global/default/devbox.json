@@ -4,5 +4,9 @@
     "fd@latest",
     "nodejs@latest",
     "ruby@3.3"
-  ]
+  ],
+  "env": {
+    "NPM_CONFIG_PREFIX": "$HOME/.npm_global",
+    "PATH": "$HOME/.npm_global/bin:$PATH"
+  }
 }
