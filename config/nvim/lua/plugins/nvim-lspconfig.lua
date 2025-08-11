@@ -5,6 +5,9 @@ return {
       virtual_text = false,
     },
     servers = {
+      astro = {},
+      cssls = {},
+      css_variables = {},
       lua_ls = {
         root_dir = function(fname)
           local lspconfig = require("lspconfig")
