@@ -35,6 +35,13 @@ return {
         cmd = { "bundle", "exec", "stree", "lsp" },
       },
       eslint = {},
+      jsonls = {
+        handlers = {
+          ["workspace/diagnostic/refresh"] = function()
+            return {}
+          end,
+        },
+      },
     },
   },
 }
