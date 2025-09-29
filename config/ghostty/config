@@ -2,3 +2,4 @@ theme = TokyoNight Storm
 font-size = 14
 font-family = "JetBrainsMono Nerd Font Mono"
 shell-integration-features = no-title
+keybind = shift+enter=text:\x1b\r
