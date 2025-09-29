@@ -47,6 +47,12 @@ return {
           type = "test",
           alternate = "app/{}.ts",
         },
+        ["app/*.html.erb"] = {
+          alternate = "app/{}.text.erb",
+        },
+        ["app/*.text.erb"] = {
+          alternate = "app/{}.html.erb",
+        },
       },
     }
 
