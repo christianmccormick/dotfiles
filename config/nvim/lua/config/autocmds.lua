@@ -19,3 +19,15 @@ vim.api.nvim_create_autocmd("FileType", {
     vim.opt.bufhidden = "delete"
   end,
 })
+
+-- Goodbye inlay hints 👋🏻
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = group,
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client then
+      client.server_capabilities.inlayHintProvider = nil
+      vim.lsp.inlay_hint.enable(false, { bufnr = args.buf })
+    end
+  end,
+})
