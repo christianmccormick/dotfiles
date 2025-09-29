@@ -46,6 +46,7 @@ alias pgstop="pg_ctl -D /usr/local/var/postgres stop"
 
 # ruby
 alias be="bundle exec"
+alias resetrubylsp="rm -rf ./.ruby-lsp && gem uninstall ruby-lsp-rails --force && gem uninstall ruby-lsp --force"
 
 # rails
 alias rc="rails console"
