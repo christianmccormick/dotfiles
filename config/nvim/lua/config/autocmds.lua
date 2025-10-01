@@ -31,3 +31,22 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
   end,
 })
+
+-- Make diffs a little easier on the eyes
+vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
+  group = group,
+  callback = function()
+    for _, win in ipairs(vim.api.nvim_list_wins()) do
+      if vim.wo[win].diff then
+        -- Get rid of annoying bright white underline on diff cursor line
+        -- Upstream issue: https://github.com/neovim/neovim/issues/9800
+        vim.wo[win].cursorlineopt = "number"
+
+        -- Get rid of more annoying bright white lines, this time the diagonal ones in diffs
+        local colors = require("tokyonight.colors").setup({ style = "storm" })
+        local default_diff_delete_bg = vim.api.nvim_get_hl(0, { name = "DiffDelete" }).bg
+        vim.api.nvim_set_hl(0, "DiffDelete", { fg = colors.bg_dark, bg = default_diff_delete_bg })
+      end
+    end
+  end,
+})
