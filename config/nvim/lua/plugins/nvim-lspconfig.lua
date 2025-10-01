@@ -8,6 +8,13 @@ return {
       astro = {},
       cssls = {},
       css_variables = {},
+      copilot = {
+        settings = {
+          telemetry = {
+            telemetryLevel = "off",
+          },
+        },
+      },
       lua_ls = {
         root_dir = function(fname)
           local lspconfig = require("lspconfig")
