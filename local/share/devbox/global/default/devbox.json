@@ -1,6 +1,5 @@
 {
   "packages": [
-    "claude-code@latest",
     "fd@latest",
     "nodejs@latest",
     "ruby@3.3"
