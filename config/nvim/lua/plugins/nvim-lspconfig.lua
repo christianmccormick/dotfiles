@@ -30,10 +30,6 @@ return {
           formatter = "syntax_tree",
         },
       },
-      rubocop = {},
-      syntax_tree = {
-        cmd = { "bundle", "exec", "stree", "lsp" },
-      },
       eslint = {},
       jsonls = {
         handlers = {
