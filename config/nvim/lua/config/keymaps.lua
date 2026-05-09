@@ -34,14 +34,14 @@ vim.api.nvim_set_keymap(
 vim.api.nvim_set_keymap(
   "v",
   "<leader>gB",
-  "<cmd>'<,'>:GH blame<CR>",
+  ":'<,'>GH blame<CR>",
   { desc = "Git Blame", noremap = true, silent = true }
 )
 
 vim.api.nvim_set_keymap(
   "v",
   "<leader>gH",
-  "<cmd>'<,'>:GH browse<CR>",
+  ":'<,'>GH browse<CR>",
   { desc = "Git Browse", noremap = true, silent = true }
 )
 
