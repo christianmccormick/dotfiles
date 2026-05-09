@@ -1,8 +1,7 @@
 {
   "packages": [
     "fd@latest",
-    "nodejs@latest",
-    "ruby@3.3"
+    "nodejs@latest"
   ],
   "env": {
     "NPM_CONFIG_PREFIX": "$HOME/.npm_global",
