@@ -1,1 +1,14 @@
-# zsh functions go here
+tns() {
+  local directory="${PWD:t}"
+  local session="${directory//[.:]/}"
+  if ! tmux has-session -t "=$session" 2>/dev/null; then
+    tmux new-session -ds "$session" -n claude claude
+    tmux new-window -t "$session:" -n neovim nvim
+    tmux select-window -t "$session:claude"
+  fi
+  if [ -n "$TMUX" ]; then
+    tmux switch-client -t "$session"
+  else
+    tmux attach -t "$session"
+  fi
+}
