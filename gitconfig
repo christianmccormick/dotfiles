@@ -60,3 +60,5 @@
 
 [push]
   useForceIfIncludes = true
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
