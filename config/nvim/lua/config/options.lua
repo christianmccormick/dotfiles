@@ -5,3 +5,5 @@
 local opt = vim.opt
 
 opt.wrap = true
+opt.autoread = true
+opt.updatetime = 1000

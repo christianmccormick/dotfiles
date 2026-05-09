@@ -32,6 +32,17 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+-- Auto-reload files changed outside Neovim (e.g. by Claude Code)
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+  group = group,
+  pattern = "*",
+  callback = function()
+    if vim.fn.mode() ~= "c" then
+      vim.cmd("checktime")
+    end
+  end,
+})
+
 -- Make diffs a little easier on the eyes
 vim.api.nvim_create_autocmd({ "BufEnter", "WinEnter" }, {
   group = group,
