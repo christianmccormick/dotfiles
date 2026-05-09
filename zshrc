@@ -46,6 +46,9 @@ export RIPGREP_CONFIG_PATH=$HOME/.ripgreprc
 # set tab titles to current directory
 precmd() { echo -ne '\e]1;$PWD\a' }
 
+# set up claude code
+export PATH="$HOME/.local/bin:$PATH"
+
 # set up devbox global
 eval "$(devbox global shellenv)"
 
