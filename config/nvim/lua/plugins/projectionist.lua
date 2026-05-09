@@ -15,6 +15,18 @@ return {
           type = "test",
           alternate = "app/{}.rb",
         },
+        ["lib/*.rb"] = {
+          type = "source",
+          alternate = { "test/lib/{}_test.rb", "spec/lib/{}_spec.rb" },
+        },
+        ["test/lib/*_test.rb"] = {
+          type = "test",
+          alternate = "lib/{}.rb",
+        },
+        ["spec/lib/*_spec.rb"] = {
+          type = "test",
+          alternate = "lib/{}.rb",
+        },
         ["app/*.js"] = {
           type = "source",
           alternate = { "test/{}_test.js", "spec/{}_spec.js" },
